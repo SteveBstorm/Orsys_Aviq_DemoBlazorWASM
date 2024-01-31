@@ -1,0 +1,7 @@
+﻿@page "/target/{id:int}"
+<h3>Target</h3>
+<p>Mon super id : @id</p>
+@code {
+    [Parameter]
+    public int id { get; set; }
+}

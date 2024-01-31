@@ -30,7 +30,10 @@
         {
             await Console.Out.WriteLineAsync("Passage dans la méthode Initialized");
         }
-
+        protected override void OnInitialized()
+        {
+            Console.WriteLine("initialized sync");
+        }
         protected override async Task OnAfterRenderAsync(bool firstRender)
         {
             if (firstRender)

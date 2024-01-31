@@ -1,0 +1,26 @@
+﻿@page "/demo3"
+<h3>Demo3</h3>
+
+<EditForm Model="MyForm" OnValidSubmit="Submit">
+    @* <DataAnnotationsValidator /> *@
+    <ObjectGraphDataAnnotationsValidator />
+    <p>Titre : <InputText @bind-Value="MyForm.Title" /></p>
+    
+        <ValidationMessage For="() => MyForm.Title" />
+   
+    <p>Année de sortie : <InputNumber @bind-Value="MyForm.ReleaseYear" /></p>
+        <ValidationMessage For="() => MyForm.ReleaseYear" />
+    <p>Synopsis : <InputTextArea @onkeyup="ForceRender" @bind-Value="MyForm.Synopsis" /></p>
+        <ValidationMessage For="() => MyForm.Synopsis" />
+    <p>Réalisateur : <InputText @bind-Value="MyForm.Realisator.LastName" placeholder="Nom" />
+        <InputText @bind-Value="MyForm.Realisator.FirstName" placeholder="Prénom" />
+    </p>
+
+    <button class="btn btn-info" type="submit">Valider</button>
+
+    <ValidationSummary />
+</EditForm>
+
+@code {
+
+}

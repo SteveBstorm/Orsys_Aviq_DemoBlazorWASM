@@ -1,0 +1,34 @@
+﻿@page "/quizz"
+<h3>Quizz</h3>
+@if(!IsGameFinished)
+{
+    @if (string.IsNullOrEmpty(Nickname))
+    {
+        <p>
+            Introduisez votre pseudo :
+            <input type="text" @bind-value="Nickname" />
+        </p>
+    }
+    else
+    {
+        <Question Nickname="@Nickname" 
+                  CurrentQuestion="@Questions[Counter]"
+                  NotifyGameIsOver="GameOver"
+                  NotifyResponse="SaveResponse"
+                  />
+    }
+}
+else
+{
+    <ul>
+        @foreach(string r in Answers)
+        {
+            <li>@r</li>
+        }
+    </ul>
+    <p>Partie terminée</p>
+}
+
+@code {
+
+}

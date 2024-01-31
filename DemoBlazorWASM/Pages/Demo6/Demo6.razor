@@ -1,0 +1,16 @@
+﻿@page "/demo6"
+@using DemoBlazorWASM.Pages.Demo3;
+<h3>Demo6</h3>
+@if(Liste is not null)
+{
+    <ul>
+        @foreach(Movie m in Liste)
+        {
+            <li>@m.Title</li>
+        }
+        
+    </ul>
+}
+@code {
+
+}

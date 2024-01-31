@@ -1,0 +1,24 @@
+﻿@page "/demo4"
+<h3>Demo4</h3>
+<h3>Version foreach</h3>
+<div style="max-height:200px; overflow-y : scroll;">
+    <ul>
+        @foreach (Guid g in Liste)
+        {
+            <li>@g</li>
+        }
+    </ul>
+</div>
+
+<hr />
+<h3>Version Virtualize</h3>
+<div style="max-height:200px; overflow-y : scroll;">
+    <ul>
+        <Virtualize Items="Liste" Context="g">
+            <li>@g</li>
+        </Virtualize>
+    </ul>
+</div>
+@code {
+
+}

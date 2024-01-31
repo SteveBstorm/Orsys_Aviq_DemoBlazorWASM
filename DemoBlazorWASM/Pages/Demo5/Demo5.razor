@@ -1,0 +1,12 @@
+﻿@page "/demo5"
+@inject NavigationManager nav
+<h3>Demo5</h3>
+
+<input @bind-value="Value" />
+<button @onclick="SaveValue">Save</button>
+<button @onclick="@(() => nav.NavigateTo("/target/42"))">Redirect</button>
+
+
+@code {
+
+}
