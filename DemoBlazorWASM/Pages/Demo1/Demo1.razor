@@ -1,0 +1,11 @@
+﻿@page "/demo1"
+<h3>Demo1</h3>
+@*Binding One way*@
+<p>@Value</p>
+
+@*Binding Two Ways*@
+<input type="number" @bind-value="Value" />
+
+@*Event Binding*@
+<button @onclick="Increment">+</button>
+<button @onclick="() => Decrement(5)">-</button>
