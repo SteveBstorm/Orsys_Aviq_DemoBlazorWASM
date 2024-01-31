@@ -8,4 +8,8 @@
 
 @*Event Binding*@
 <button @onclick="Increment">+</button>
-<button @onclick="() => Decrement(5)">-</button>
+
+@if (Value > 10)
+{
+    <button disabled="@(Value < 20)" @onclick="() => Decrement(5)">-</button>
+}

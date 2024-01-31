@@ -1,0 +1,11 @@
+﻿@page "/demo2"
+<h3>Demo2</h3>
+<button @onclick="Increment">Augmenter</button>
+<p>Valeur de l'enfant : @ValueFromChildren</p>
+<hr />
+<Children ValueFromParent="MyValue" MyEvent="ReceiveFromChildren" />
+
+@*
+    les propriétés [Parameter] deviennent des attributs de la balise 
+    d'appel du composant appelé
+*@
