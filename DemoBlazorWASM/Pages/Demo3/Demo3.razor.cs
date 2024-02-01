@@ -1,4 +1,7 @@
-﻿namespace DemoBlazorWASM.Pages.Demo3
+﻿using Microsoft.AspNetCore.Components;
+using System.Net.Http.Json;
+
+namespace DemoBlazorWASM.Pages.Demo3
 {
     public partial class Demo3
     {
@@ -11,14 +14,18 @@
         
         public Movie MyForm { get; set; }
 
+        [Inject]
+        public HttpClient Client { get; set; }
+
         protected override void OnInitialized()
         {
             MyForm = new Movie();
             MyForm.Realisator = new Person();
         }
 
-        public void Submit()
+        public async Task Submit()
         {
+            await Client.PostAsJsonAsync("movie",MyForm);
             Console.WriteLine(MyForm.Title);
         }
         public void ForceRender()
