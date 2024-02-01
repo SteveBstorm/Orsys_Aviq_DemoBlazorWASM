@@ -1,0 +1,15 @@
+﻿@page "/register"
+<h3>Register</h3>
+<PageTitle>Création d'un compte</PageTitle>
+<EditForm Model="Form" OnValidSubmit="Submit">
+    <DataAnnotationsValidator />
+    <p>Email : <InputText @bind-Value="Form.Email" /></p>
+    <p>Mot de passe : <InputText @bind-Value="Form.Password" /></p>
+    <p>Confirmation MDP : <InputText @bind-Value="Form.ConfirmPassword" /></p>
+    <p>Nickname : <InputText @bind-Value="Form.Nickname" /></p>
+    <button type="submit">Valider</button>
+    <ValidationSummary />
+</EditForm>
+@code {
+
+}

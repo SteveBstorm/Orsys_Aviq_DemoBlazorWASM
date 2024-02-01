@@ -1,0 +1,10 @@
+﻿@page "/login"
+<h3>Login</h3>
+<EditForm Model="Form" OnValidSubmit="Submit">
+    <p>Email : <InputText type="email" @bind-Value="Form.Email" /></p>
+    <p>MDP : <InputText type="password" @bind-Value="Form.Password" /></p>
+    <p><button type="submit">Connexion</button></p>
+</EditForm>
+@code {
+
+}

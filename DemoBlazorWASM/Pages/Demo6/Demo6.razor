@@ -1,16 +1,27 @@
 ﻿@page "/demo6"
 @using DemoBlazorWASM.Pages.Demo3;
-<h3>Demo6</h3>
-@if(Liste is not null)
-{
-    <ul>
-        @foreach(Movie m in Liste)
+@inject NavigationManager nav
+<AuthorizeView>
+<Authorized>
+        <h3>Demo6</h3>
+        @if (Liste is not null)
         {
-            <li>@m.Title</li>
+            <ul>
+                @foreach (Movie m in Liste)
+                {
+                    <li>@m.Title</li>
+                }
+
+            </ul>
         }
-        
-    </ul>
-}
+</Authorized>
+<NotAuthorized>
+        @{
+            nav.NavigateTo("/");
+        }
+    </NotAuthorized>
+</AuthorizeView>
+
 @code {
 
 }
