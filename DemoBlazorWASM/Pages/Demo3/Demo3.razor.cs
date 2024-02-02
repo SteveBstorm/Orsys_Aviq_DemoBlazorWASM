@@ -15,10 +15,12 @@ namespace DemoBlazorWASM.Pages.Demo3
         public Movie MyForm { get; set; }
 
         [Inject]
+        public IHttpClientFactory Factory{ get; set; }
         public HttpClient Client { get; set; }
 
         protected override void OnInitialized()
         {
+            Client = Factory.CreateClient("apiDemo");
             MyForm = new Movie();
             MyForm.Realisator = new Person();
         }
